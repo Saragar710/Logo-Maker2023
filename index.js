@@ -3,46 +3,56 @@ const fs = require('fs');
 const shapes = require('./lib/shapes')
 
 
-// function Shape () {
-//     constuctor( type, color, width, height, fill )
-//     this.type = type;
-//     this.color = color;
-//     this.width = width;
-//     this.height = height;
-//     this.fill = fill;
 
-//     this.createShape = function ()  {console.log (`This is my ${this.type} ${this.color}`)}
-// }
 const questions = [
     {
         type: 'input',
-        name: 'name',
-        message: "What is your name?",
-    }
-]
-
-class Shape{
-    constructor(type, color, width, height, fill) {
-        this.type = type,
-        this.color = color,
-        this. width = width,
-        this.height = height,
-        this.fill = fill,
+        name: 'text',
+        message: "Enter three characters",
+    },
+    {
+        type: 'input',
+        name: 'color',
+        message: "Choose a color.",
+    },
+    {
+        type: 'checkbox',
+        message: "Choose your shape",
+        name: 'shape',
+        choices: ['Square','Triangle','Circle'],
         
-    };
+    },
+   
+];
 
-    showCreateShape() {
-        console.log(`The shape you choose is ${this.type} ${this.color} ${this.width} ${this.height} ${this.fill}`);
-    }
-}
+// class Shape {
+//     constructor(type, color, ) {
+//         this.type = type,
+//             this.color = color,
+//             // this.width = width,
+//             // this.height = height,
+//             // this.fill = fill,
+        
+//     }
+
+//     showCreateShape() {
+//         console.log(`The shape you choose is ${this.type} ${this.color} `);
+//     }
+// }
 
 
 
 
-const circle = new Shape('circle', 'blue');
-const triangle = new Shape ('triangle', 'pink');
-const square = new Shape('square', 'yellow');
+// class Circle extends Shape  {
+// constructor (type, color, ){
+//     super()
+// }
 
-circle.createShape();
-triangle.createShape();
-square.createShape();
+// }
+// const triangle = new Shape('triangle', 'pink');
+// const square = new Shape('square', 'yellow');
+
+// circle.createShape();
+// triangle.createShape();
+// square.createShape();
+init();
