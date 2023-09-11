@@ -24,7 +24,14 @@ const questions = [
     },
    
 ];
-
+function init() {
+    inquirer 
+    .prompt(questions)
+    .then((answers) => {
+        console.log("results ...")
+        console.log(answers)
+    })
+}
 // class Shape {
 //     constructor(type, color, ) {
 //         this.type = type,
