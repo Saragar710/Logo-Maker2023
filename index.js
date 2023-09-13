@@ -25,6 +25,8 @@ const questions = [
     {
         type: 'input',
         name: "fontcolor",
+        message: "Font color is white",
+    
 
     }
    
@@ -59,8 +61,8 @@ function init() {
     .then((answers) => {
         console.log("results ...");
         console.log(answers);
-        
-        render() {
+
+        render() 
             if(this.shape === 'circle'){
                 return 'Render circle';
             } else if (this.shape === 'triangle') {
@@ -71,7 +73,7 @@ function init() {
                 return 'Unknown shape';
             }
     
-        }
+        
       
       const shape = new Shapes(answers.shape);
 
