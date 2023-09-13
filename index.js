@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const shapes = require('./lib/shapes')
+const {Shapes, Circle, Triangle, Square} = require('./lib/shapes');
 
 
 
@@ -16,7 +16,7 @@ const questions = [
         message: "Choose a color.",
     },
     {
-        type: 'checkbox',
+        type: 'list',
         message: "Choose your shape",
         name: 'shape',
         choices: ['Square','Triangle','Circle'],
@@ -34,37 +34,20 @@ function init() {
     .then((answers) => {
         console.log("results ...")
         console.log(answers)
-        writeToFile("SVGfile",shapes(answers))
-    })
+      
+      const shape = new Shapes(answers)
+    //   if(shape === "circle"){
+    //     console.log("You chose a circle.");
+    //     } else if (shape === "triangle"){
+    //         console.log("You chose a triangle.");
+    //     } else if(shape === "square") {
+    //         console.log("You chose a square");
+    //     }
+        writeToFile("logo.svg", shape.render())
+    })   
 }
-// class Shape {
-//     constructor(type, color, ) {
-//         this.type = type,
-//             this.color = color,
-//             // this.width = width,
-//             // this.height = height,
-//             // this.fill = fill,
-        
-//     }
-
-//     showCreateShape() {
-//         console.log(`The shape you choose is ${this.type} ${this.color} `);
-//     }
-// }
 
 
 
 
-// class Circle extends Shape  {
-// constructor (type, color, ){
-//     super()
-// }
-
-// }
-// const triangle = new Shape('triangle', 'pink');
-// const square = new Shape('square', 'yellow');
-
-// circle.createShape();
-// triangle.createShape();
-// square.createShape();
 init();
