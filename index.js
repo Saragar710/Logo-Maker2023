@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const {Shapes, Circle, Triangle, Square} = require('./lib/shapes');
+const { Shapes, Circle, Triangle, Square } = require('./lib/shapes');
 
 
 
@@ -64,8 +64,9 @@ function init() {
 
         const shape = new Shapes(answers.shape);
 
+    
         render();
-        function render() {
+         //function render() {
             if(this.shape === 'circle'){
                 return 'Render circle';
             } else if (this.shape === 'triangle') {
@@ -76,7 +77,7 @@ function init() {
                 return 'Unknown shape';
             }
     
-        }
+      // }
       
      
 
