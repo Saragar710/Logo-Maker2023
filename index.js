@@ -23,7 +23,7 @@ const questions = [
         
     },
     {
-        type: 'input',
+        type: 'confirm',
         name: "fontcolor",
         message: "Font color is white.",
     
