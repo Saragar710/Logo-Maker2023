@@ -17,7 +17,7 @@ const questions = [
     },
     {
         type: 'list',
-        message: "Choose your shape",
+        message: "Choose your shape.",
         name: 'shape',
         choices: ['Square','Triangle','Circle'],
         
@@ -25,7 +25,7 @@ const questions = [
     {
         type: 'input',
         name: "fontcolor",
-        message: "Font color is white",
+        message: "Font color is white.",
     
 
     }
@@ -62,7 +62,10 @@ function init() {
         console.log("results ...");
         console.log(answers);
 
-        render() 
+        const shape = new Shapes(answers.shape);
+
+        render();
+        function render() {
             if(this.shape === 'circle'){
                 return 'Render circle';
             } else if (this.shape === 'triangle') {
@@ -73,9 +76,9 @@ function init() {
                 return 'Unknown shape';
             }
     
-        
+        }
       
-      const shape = new Shapes(answers.shape);
+     
 
     //   if(shape.shape === "circle"){
     //     console.log("You chose a circle.");
