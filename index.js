@@ -53,7 +53,15 @@ const questions = [
 //}
 function writeToFile(fileName, data) {
     fs.writeFileSync(`./${fileName}`, data);
+
 }
+.then(() => {
+    console.log("Create a svglogo");
+})
+.catch((error) => {
+    console.log(error);
+    console.log("Something went wrong");
+})
 
 function init() {
     run(){
