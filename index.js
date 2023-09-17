@@ -51,17 +51,43 @@ const questions = [
 
 // }
 //}
-function writeToFile(fileName, data) {
-    fs.writeFileSync(`./${fileName}`, data);
 
+// Code didnt work, will try rewriting
+// function writeToFile(fileName, data) {
+//     fs.writeFileSync(`./${fileName}`, data);
+
+
+// .then(() => {
+//     console.log("Create a svglogo");
+// })
+// .catch((error) => {
+//     console.log(error);
+//     console.log("Something went wrong");
+// });
+// }
+
+// Code worked 
+function writeToFile(fileName, data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(`./${fileName}`, data, (error) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve();
+            }
+        });
+    });
 }
-.then(() => {
-    console.log("Create a svglogo");
-})
-.catch((error) => {
-    console.log(error);
-    console.log("Something went wrong");
-})
+
+writeToFile('filename.txt', 'Some data')
+    .then(() => {
+        console.log('Create a svglogo');
+    })
+    .catch((error) => {
+        console.error(error);
+        console.log('Something went wrong');
+    });
+
 
 function init() {
     run(){
