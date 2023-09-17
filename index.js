@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const { Shapes, Circle, Triangle, Square } = require('./lib/shapes');
-
+const { Circle, Triangle, Square } = require('./lib/shapes');
+const SVG = require('./lib/svg');
 
 
 const questions = [
@@ -12,20 +12,20 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'color',
+        name: 'shapeColor',
         message: "Choose a color.",
     },
     {
         type: 'list',
         message: "Choose your shape.",
         name: 'shapeType',
-        choices: ['square', 'triangle', 'circle'],
+        choices: ['circle', 'triangle', 'square'],
 
     },
     {
         type: 'confirm',
         name: "fontcolor",
-        message: "Font color is white.",
+        message: "Choose your font color.",
 
 
     }
@@ -66,7 +66,7 @@ function init() {
             },
             {
                 type: 'input',
-                name: 'color',
+                name: 'shapeColor',
                 message: "Choose a color.",
             },
             {
@@ -78,14 +78,14 @@ function init() {
             },
             {
                 type: 'confirm',
-                name: "fontcolor",
-                message: "Font color is white.",
+                name: "fontColor",
+                message: "Chose a font color.",
         
         
             }
         
         ])
-        .then(({ text, color, fontColor, shapeType }) => {
+        .then(({ text, shapeColor, fontColor, shapeType }) => {
             // console.log("results ...");
            
             let shape;
@@ -100,8 +100,14 @@ function init() {
                     shape = new Circle();
                     break;
     }
-    
+        // let shapeColor = shape.setColor(shapeColor)
 })
+        // .then(() => 
+        // let shapeColor =  shape.setColor(shapeColor)
+        // )
+       
+    }
+}
 
 
 
