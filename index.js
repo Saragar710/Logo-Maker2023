@@ -31,26 +31,7 @@ const questions = [
     }
 
 ];
-// class Shapes {
-//     constructor(shape) {
-//         this.shape = shape;
-//         this.shapeColor = shapeColor;
-//         this.text = text;
-//     }
 
-// render() {
-//     if(this.shape === 'circle'){
-//         return 'Render circle';
-//     } else if (this.shape === 'triangle') {
-//         return 'Render triangle';
-//     } else if (this.shape === 'square') {
-//         return 'Render square';
-//     }else {
-//         return 'Unknown shape';
-//     }
-
-// }
-//}
 
 // Code didnt work, will try rewriting
 // function writeToFile(fileName, data) {
@@ -90,7 +71,8 @@ writeToFile('filename.txt', 'Some data')
 
 
 function init() {
-    run(){
+    // run()
+    //  {
         return inquirer
         .prompt([ 
             {
@@ -141,28 +123,8 @@ function init() {
         // )
        
     }
-}
+//}
 
-
-
-            //function render() {
-
-          
-
-            // }
-
-
-
-            //   if(shape.shape === "circle"){
-            //     console.log("You chose a circle.");
-            //     } else if (shape.shape === "triangle"){
-            //         console.log("You chose a triangle.");
-            //     } else if(shape.shape === "square") {
-            //         console.log("You chose a square");
-            //     }
-//             writeToFile("logo.svg", shape.render())
-//         })
-// }
 
 
 
